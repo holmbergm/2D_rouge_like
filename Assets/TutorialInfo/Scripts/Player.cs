@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Player : MovingObjects {
@@ -50,7 +51,7 @@ public class Player : MovingObjects {
     {
         food--;
 
-        base.AttemptMove<T>(xDir, yDir);
+        base.AttemptMove <T> (xDir, yDir);
 
         RaycastHit2D hit;
 
@@ -92,7 +93,7 @@ public class Player : MovingObjects {
 
     private void Restart()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene (0);
     }
 
     public void LoseFood (int loss)
